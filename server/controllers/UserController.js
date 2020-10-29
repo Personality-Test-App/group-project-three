@@ -19,6 +19,30 @@ class UserController {
 				next(err)
 			})
 	}
+
+	static login(req, res, next) {
+		const { email, password } = req.body
+		User.findOne({
+			where: { email }
+		})
+			.then((dataUser) => {
+				if (!dataUser) {
+					throw { name: "InvalidUsernamePassword" }
+				}
+				const matchPassword = comparePassword(password, dataUser.password)
+
+				if (!matchPassword) {
+					throw { name: "InvalidUsernamePassword" }
+				} else {
+					let payload = { id: dataUser.id, email: dataUser.email }
+					let token = signToken(payload)
+					res.status(201).json({ token })
+				}
+			})
+			.catch((err) => {
+				next(err)
+			})
+	}
 }
 
 module.exports = UserController

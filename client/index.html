@@ -14,7 +14,7 @@
 
 <body>
   <!-- Register -->
-  <section class="container mt-5" id="register">
+  <section class="container mt-5" id="register" style="display: none">
     <div class="row justify-content-center">
       <div class="col-4">
         <form onsubmit="register(event)">
@@ -32,7 +32,8 @@
             <input type="password" name="register-password" id="register-password" class="form-control">
           </div>
 
-          <button type="submit" class="btn btn-primary">Register</button>
+          <button type="submit" class="btn btn-success">Register</button>
+          <button onclick="toLogin()" class="btn btn-link mt-5" style="cursor: pointer">Already have an account?</button>
         </form>
       </div>
     </div>
@@ -42,7 +43,7 @@
     <div class="row justify-content-center">
         <div class="col-4">
             <form onsubmit="login(event)">
-                <h1>LOGIN</h1>
+                <h1>Welcome Back</h1>
                 <div class="form-group">
                         <label for="login-email">Email</label>
                         <input type="email" name="login-email" id="login-email" class="form-control">
@@ -52,7 +53,8 @@
                         <input type="password" name="login-password" id="login-password" class="form-control">
                     </div>
                     
-                    <button type="submit" class="btn btn-primary">LOGIN</button>
+                    <button type="submit" class="btn btn-success">Login</button>
+                    <button onclick="toRegister()" class="btn btn-link mt-3" style="cursor: pointer">Not a user yet? Register here</button>
             </form>
         </div>
     </div>
@@ -60,7 +62,7 @@
   <!-- Google Form Login -->
   <form action="">
     <!-- Button Google Sign In -->
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <div class="g-signin2 row justify-content-center" data-width="285" data-height="35" data-longtitle="true" data-onsuccess="onSignIn"></div>
     <!-- Button Google Sign Out -->
     <a href="#" onclick="signOut();">Sign out</a>
   </form>
