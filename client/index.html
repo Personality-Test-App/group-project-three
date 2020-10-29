@@ -7,7 +7,7 @@
     <title>REGISTER</title>
 </head>
 <body>
-    <section class="contaioner mt-5" id="register">
+    <section class="container mt-5" id="register">
         <div class="row justify-content-center">
             <div class="col-4">
                 <form onsubmit="register(event)">
@@ -22,10 +22,37 @@
                         </div>
 
                         <button type="submit" class="btn btn-primary">REGISTER</button>
+                    </form>
+                </div>
+        </div>
+    </section>
+    <section class="container mt-5" id="login">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <form onsubmit="login(event)">
+                    <h1>LOGIN</h1>
+                    <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <input type="email" name="login-email" id="login-email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" name="login-password" id="login-password" class="form-control">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">LOGIN</button>
                 </form>
             </div>
         </div>
+    </section>
 
+    <section class="container mt-5 mb-5" id="home">
+        <h1>INI HOME</h1>
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <button class="btn btn-danger" onclick="logout()">LOGOUT</button>
+            </div>
+        </div>
     </section>
 </body>
 </html>
