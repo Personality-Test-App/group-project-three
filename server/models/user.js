@@ -1,4 +1,6 @@
 'use strict';
+const { hashPassword } = require("../helpers/bcrypt");
+
 const {
   Model
 } = require('sequelize');
