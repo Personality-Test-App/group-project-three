@@ -72,6 +72,14 @@ function login(event) {
 	})
 }
 
+// Logout
+function logout() {
+    $("#home").hide()
+    $("#login").show()
+    $("#register").show()
+    localStorage.removeItem("token")
+}
+
 // Google Sign In 
 function onSignIn(googleUser) {
 	// var profile = googleUser.getBasicProfile();
