@@ -1,5 +1,5 @@
 class HomeController {
-	static home(req, res) {
+	static showHome(req, res) {
 		res.send("App is running now")
 	}
 }

@@ -8,14 +8,17 @@ function register(event) {
 
 	$.ajax({
 		method: "POST",
-		url: server + "/users/register",
+		url: server + "/register",
 		data: { 
 			username, 
 			email, 
-			password }
-	}).done(response => {
+			password 
+		}
+	})
+	.done(response => {
 		console.log(response)
-	}).fail(err => {
+	})
+	.fail(err => {
 		console.log(err)
 	})
 }
