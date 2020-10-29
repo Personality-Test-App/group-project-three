@@ -11,10 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-<<<<<<< HEAD
-=======
-    "cors": "^2.8.5",
->>>>>>> 57d8aef1aa03f710ec83285c7d6806d09834dcfd
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "google-auth-library": "^6.1.3",
