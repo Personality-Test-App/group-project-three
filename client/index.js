@@ -1,3 +1,5 @@
+const { response } = require("express")
+
 const server = "http://localhost:3000"
 
 $(document).ready(function () {
@@ -82,7 +84,19 @@ function onSignIn(googleUser) {
 	var google_access_token = googleUser.getAuthResponse().id_token;
 
 	// Verify di backend minta tolong sama google
-
+  $.ajax({
+		method: 'POST',
+		url: server + '/googleLogin',
+		data: {
+			google_access_token
+		}
+	})
+	.done(response => {
+		console.log(response);
+	})
+	.fail(err => {
+		console.log(err);
+	})
 }
 
 // Google Sign Out
