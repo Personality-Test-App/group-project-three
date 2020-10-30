@@ -2,84 +2,132 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-  <!-- Google Client Id Meta -->
-  <meta name="google-signin-client_id" content="1027830254576-648vrnm166899ii0hak3i50rofb20hp4.apps.googleusercontent.com">
-  <title>InstaPlants</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+   <!-- Google Client Id Meta -->
+   <meta name="google-signin-client_id"
+      content="1027830254576-648vrnm166899ii0hak3i50rofb20hp4.apps.googleusercontent.com">
+   <title>InstaPlants</title>
+
+   <style>
+      img {
+         border: 1px solid #ddd;
+         /* Gray border */
+         border-radius: 4px;
+         /* Rounded border */
+         padding: 5px;
+         /* Some padding */
+         width: 150px;
+         /* Set a small width */
+      }
+
+      /* Add a hover effect (blue shadow) */
+      img:hover {
+         box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+      }
+   </style>
 </head>
 
 <body>
-  <!-- Register -->
-  <section class="container mt-5" id="register" style="display: none">
-    <div class="row justify-content-center">
-      <div class="col-4">
-        <form onsubmit="register(event)">
-          <h1>Register User</h1>
-          <div class="form-group">
-            <label for="register-username">Username</label>
-            <input type="username" name="register-username" id="register-username" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="register-email">Email</label>
-            <input type="email" name="register-email" id="register-email" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="register-password">Password</label>
-            <input type="password" name="register-password" id="register-password" class="form-control">
-          </div>
+   <div class="view"
+      style="background-image: url('https://images.unsplash.com/photo-1561039187-914069fb3236?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjE3ODY5MX0'); background-size: cover;">
+      <!-- Register -->
+      <section class="container mt-5" id="register" style="display: none">
 
-          <button type="submit" class="btn btn-success">Register</button>
-          <button onclick="toLogin()" class="btn btn-link mt-5" style="cursor: pointer">Already have an account?</button>
-        </form>
-      </div>
-    </div>
-  </section>
-  <!-- Login -->
-  <section class="container mt-5" id="login">
-    <div class="row justify-content-center">
-        <div class="col-4">
-            <form onsubmit="login(event)">
-                <h1>Welcome Back</h1>
-                <div class="form-group">
-                        <label for="login-email">Email</label>
-                        <input type="email" name="login-email" id="login-email" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="login-password">Password</label>
-                        <input type="password" name="login-password" id="login-password" class="form-control">
-                    </div>
-                    
-                    <button type="submit" class="btn btn-success">Login</button>
-                    <button onclick="toRegister()" class="btn btn-link mt-3" style="cursor: pointer">Not a user yet? Register here</button>
-            </form>
-        </div>
-    </div>
-</section>
-  <!-- Google Form Login -->
-  <form action="">
-    <!-- Button Google Sign In -->
-    <div class="g-signin2 row justify-content-center" data-width="285" data-height="35" data-longtitle="true" data-onsuccess="onSignIn"></div>
-    <!-- Button Google Sign Out -->
-    <a href="#" onclick="signOut();">Sign out</a>
-  </form>
-  <!-- Home -->
-  <section id="home" style="display:none">
-    <p>Test masuk ke home</p>
-    <section class="container mt-5 mb-5" id="home">
-    <div class="row justify-content-center">
-        <div class="col-4">
-            <button class="btn btn-danger" onclick="logout()">LOGOUT</button>
-  </section>
-  <!-- End Form Login -->
+         <div class="row justify-content-center">
+            <div class="col-4">
+               <form onsubmit="register(event)">
+                  <h1>Register User</h1>
+                  <div class="form-group">
+                     <label for="register-username">Username</label>
+                     <input type="username" name="register-username" id="register-username" class="form-control">
+                  </div>
+                  <div class="form-group">
+                     <label for="register-email">Email</label>
+                     <input type="email" name="register-email" id="register-email" class="form-control">
+                  </div>
+                  <div class="form-group">
+                     <label for="register-password">Password</label>
+                     <input type="password" name="register-password" id="register-password" class="form-control">
+                  </div>
 
-  <!-- Integrated Google Sign In -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <script src="./index.js"></script>
-  
+                  <button type="submit" class="btn btn-success">Register</button>
+                  <button onclick="toLogin()" class="btn btn-link mt-5" style="cursor: pointer">Already have an
+                     account?</button>
+               </form>
+            </div>
+         </div>
+      </section>
+      <!-- Login -->
+      <section class="container mt-5" id="login">
+         <div class="row justify-content-center">
+            <div class="col-4">
+               <form onsubmit="login(event)">
+                  <h1>Welcome Back</h1>
+                  <div class="form-group">
+                     <label for="login-email">Email</label>
+                     <input type="email" name="login-email" id="login-email" class="form-control">
+                  </div>
+                  <div class="form-group">
+                     <label for="login-password">Password</label>
+                     <input type="password" name="login-password" id="login-password" class="form-control">
+                  </div>
+
+                  <button type="submit" class="btn btn-success">Login</button>
+                  <button onclick="toRegister()" class="btn btn-link mt-3" style="cursor: pointer">Not a user yet?
+                     Register
+                     here</button>
+               </form>
+            </div>
+         </div>
+      </section>
+      <!-- Google Form Login -->
+      <form action="">
+         <!-- Button Google Sign In -->
+         <div class="g-signin2 row justify-content-center" data-width="285" data-height="35" data-longtitle="true"
+            data-onsuccess="onSignIn"></div>
+         <!-- Button Google Sign Out -->
+         <!-- <a href="#" onclick="signOut();">Sign out</a> -->
+      </form>
+      <!-- Home -->
+      <!-- <section id="home" style="display:none">
+         <p>Test masuk ke home</p>
+      <section class="container mt-5 mb-5" id="home">
+            <div class="row justify-content-center">
+               <div class="col-4">
+                  <button class="btn btn-danger" onclick="logout()">LOGOUT</button>
+      </section> -->
+
+      <section id="home" style="display: none;">
+         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+               aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+      
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+               <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li class="nav-item active">
+                     <button id="btn-get-another-random" type="button" class="btn btn-outline-success">GET ANOTHER RANDOM PLANT</button>
+                   </li>
+               </ul>
+               <button id="btn-logout" type="button" class="btn btn-outline-danger">Logout</button>
+      
+            </div>
+         </nav>
+         <div id="plant-list" class="card-columns">
+         </div>
+      </section>
+         <!-- End Form Login -->
+
+         <!-- Integrated Google Sign In -->
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script src="https://apis.google.com/js/platform.js" async defer></script>
+         <script src="./index.js"></script>
+
 </body>
 
 </html>

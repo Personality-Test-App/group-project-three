@@ -10,7 +10,7 @@ jadi ini aku random aja
 pageNumber = () => {
    page = faker.random.number({
       'min': 1,
-      'max': 18826
+      'max': 100
    });
    return page
 }

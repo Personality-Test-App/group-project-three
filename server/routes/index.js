@@ -4,6 +4,8 @@ const userRouter = require("./user.js");
 const PlantRouter = require('./plants')
 
 router.get("/", HomeController.showHome);
+router.get("/photos", HomeController.loginBackground);
+
 router.use(userRouter);
 
 router.use('/plants', PlantRouter)
