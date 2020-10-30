@@ -234,3 +234,9 @@ getAllPlants = () => {
       console.log(err);
    })
 }
+
+// getAnotherPlants = () => {
+//    $("#plant-list").empty()
+
+//    getAllPlants()
+// }
